@@ -1,0 +1,29 @@
+BoxLayoutExample:
+
+<BoxLayoutExample>:
+    orientation: 'horizontal'
+    Button:
+        text: 'A'
+        #size: '40dp', '160dp'
+        size_hint: 0.50, None
+        #width: '100dp'
+        height: '50dp'
+        pos_hint: {'top':1}
+    Button:
+        text: 'C'
+        size_hint: 1, 1
+    Label:
+        text: 'D'
+
+<MainWidget>:
+    Button:
+        text: "Hello World"
+        size: "100dp", "80dp"
+        pos: "300dp", "200dp"
+        color: 0, 0, 1, 1
+
+    Label:
+        text: "Hello Again!"
+        size: "100dp", "80dp"
+        pos: "400dp", "200dp"
+        color: 1, 0, 0, 1

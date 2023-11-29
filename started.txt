@@ -1,3 +1,28 @@
-Upload to github
-did it work?
-github edit
+We use .kv files to define the graphical interface. Further, we can differentiate between the logical and graphical areas of our code
+MainWidget is the main graphical interface
+You could call it something other than MainWidget as well.
+
+When you create a button, the default location is 0, 0 that is bottom left and default size is 100*100 pixels. This is constant regardless of screen size
+Note that there is something called pixels per inch for every device, hence, defining sizes by pixels is very bad as the buttons will be of different sizes(in inches) for every device
+Hence, we use something else called dp (density pixels) which ensures uniform size across screens despite density
+
+color: rgba red, green, blue, alpha Example: 1, 0, 0, 1 means red colour with 100% visibility (alpha)
+
+Using just the widget and Buttons, we don't get repositioning of icons if we change the size of the screen,
+In order to have this, we need layouts 
+
+LAYOUTS:
+1. Box layout:
+We import BoxLayout from kivy.uix.boxlayout and change the main interface from MainWidget to the name we give to the box layout class
+Since BoxLayoutExample is the main layout, 
+    it'll take all the space
+    it'll stack the buttons horizontally
+    (by default)
+    to change self.orientation = 'vertical'
+the size and pos properties don't work as usual here with buttons because the layout is taking care of that
+Instead we use size_hint and pos_hint: values are given as a ratio, the default valus for size_hint and pos_hint are 1, 1
+If we need to use size and pos, we can set size_hint and pos_hint to None, None and use size and pos as usual
+You can use width and height instead of size: This helps to adjust the width and height separately
+pos_hint = {'x': ratio, 'y': ratio}
+or you can use center_x or right wherein you choose the ratio position of the right edge of the button
+
